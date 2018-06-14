@@ -138,6 +138,25 @@ whatIsAwesome();
 echo $awesomeGroup . ' is pretty awesome.';
 </code></pre>
           </section>
+          <section>
+            <h3>Better Example</h3>
+            <pre><code class="php">&LT;?php
+$awesomeGroup = "Markel";
+function whatIsAwesome() {
+  $awesomeGroup = 'Girl Develop It'; //Local scope
+}
+echo $awesomeGroup . ' is pretty awesome.';
+function returnStuff($param)
+{
+    $newStuff = $param . " more stuff.";
+    echo $awesomeGroup;
+    return $newStuff;
+}
+$moreStuff = returnStuff("Markel");
+echo $moreStuff . " and " . $aewsomeGroup;
+?&GT;
+</code></pre>
+          </section>            
         </section>
 
         <!-- Boolean -->
@@ -154,6 +173,7 @@ echo $awesomeGroup . ' is pretty awesome.';
 $dogsRule = false;
 </code></pre>
             <p>If you try to use another variable as a boolean, PHP will guess. The number 0, the empty string '', and the string '0' are considered false, everything else reads as true.</p>
+            <p>Mostly remember 0 is false, non-zero is true, empty is false, not empty is true, null needs to be checked (or use isset())</p>
           </section>
         </section>
 
@@ -241,6 +261,29 @@ if ($bananas &gt; 0) {
             <h3>Let's Develop It</h3>
             <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
           </section>
+          <section>
+            <h3>My Code</h3>
+            <pre><code class="php">&LT;?php
+$temperature1 = 30;
+$temperature2 = 70;
+
+function isItCold($temp) {
+    if ($temp < 50)
+    {
+        echo "It is cold - put on a coat";
+    }
+    else
+    {
+        echo "It is too hot for a coat";
+    }
+}
+
+isItCold($temperature1);
+isItCold($temperature2);
+
+?&GT;
+</code></pre>            
+          </section>            
         </section>
 
         <!--If/else -->
@@ -288,6 +331,79 @@ if ($age >= 35) {
               <li>Otherwise, wear whatever you want.</li>
             </ol>
           </section>
+          <section>            
+            <pre><code class="php">&LT;?php
+$temperature1 = 29;
+$temperature2 = 49;
+$temperature3 = 70;
+$temperature4 = -30;
+
+function needACoat($temp) {
+    echo "Temperature is " . $temp;
+    if ($temp < 0)
+    {
+        echo "Stay inside";
+    }
+    else if ($temp < 30)
+    {
+        echo "Wear a coat and a hat" . "&LT;br /&gt;";
+    }
+    else if ($temp < 50)
+    {
+        echo "Wear a hat" . "&LT;br /&gt;";
+    }
+    else
+    {
+        echo "Wear whatever" . "&LT;br /&gt;";
+    }
+
+}
+
+needACoat($temperature1);
+needACoat($temperature2);
+needACoat($temperature3);
+needACoat($temperature4);
+
+?&GT;
+</code></pre>            
+          </section> 
+          <section>  
+              <h3>Why is this wrong?</h3>
+            <pre><code class="php">&LT;?php
+$temperature1 = 29;
+$temperature2 = 49;
+$temperature3 = 70;
+$temperature4 = -30;
+
+function needACoat($temp) {
+    echo "Temperature is " . $temp . " - ";
+    if ($temp < 50)
+    {
+        echo "Wear a hat" . "&LT;br /&gt;";
+    }
+    else if ($temp < 30)
+    {
+        echo "Wear a coat and a hat" . "&LT;br /&gt;";
+    }
+    else if ($temp < 0)
+    {
+        echo "Stay inside";
+    }
+    else
+    {
+        echo "Wear whatever" . "&LT;br /&gt;";
+    }
+
+}
+
+needACoat($temperature1);
+needACoat($temperature2);
+needACoat($temperature3);
+needACoat($temperature4);
+
+?&GT;
+</code></pre>            
+          </section>             
           <section>
             <h3>Logical Operators</h3>
             <table>
@@ -342,11 +458,54 @@ if ($bananas &gt;=2 &amp;&amp; $bananas &lt;7) {
   echo 'Check your banana supply';
 }
 </code></pre>
+<pre><code class="php">$bananas = 5;
+if (($bananas &gt;=2) &amp;&amp; ($bananas &lt;7)) {
+  echo 'You have a reasonable number of bananas';
+} else {
+  echo 'Check your banana supply';
+}
+</code></pre>            
           </section>
           <section>
             <h3>Let's Develop It</h3>
             <p>Add a logical operator to your what to wear program.</p>
           </section>
+          <section>            
+            <pre><code class="php">&LT;?php
+$temperature1 = 29;
+$temperature2 = 49;
+$temperature3 = 70;
+$temperature4 = -30;
+
+function needACoat($temp) {
+    echo "Temperature is " . $temp;
+    if ($temp < 0)
+    {
+        echo "Stay inside";
+    }
+    if (($temp > 0) && ($temp <= 30))
+    {
+        echo "Wear a coat and a hat" . "&LT;br /&gt;";
+    }
+    if (($temp > 30) && ($temp <= 50))
+    {
+        echo "Wear a hat" . "&LT;br /&gt;";
+    }
+    if ($temp > 50)
+    {
+        echo "Wear whatever" . "&LT;br /&gt;";
+    }
+
+}
+
+needACoat($temperature1);
+needACoat($temperature2);
+needACoat($temperature3);
+needACoat($temperature4);
+
+?&GT;
+</code></pre>            
+          </section>             
         </section>
 
         <!-- Loops -->
