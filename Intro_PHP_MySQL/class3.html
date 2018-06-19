@@ -78,7 +78,7 @@
         <section id="intro">
           <section>
             <h3>MySQL</h3>
-            <p>WAMP/MAMP includes three components</p>
+            <p>XAMPP/LAMP/WAMP/MAMP includes three components</p>
             <ol>
               <li><span class="blue">A</span>pache - A web server</li>
               <li><span class="blue">M</span>ySQL - Database software</li>
@@ -141,12 +141,18 @@
           <section>
             <h3>MySQL data types</h3>
             <ul>
-              <li>VARCHAR - String up to 256 characters</li>
-              <li>INT - Integer of up to 11 characters</li>
+              <li>VARCHAR - String up to 256/65,535 characters</li>
+              <li>INT - Integer of up to 11 characters </li>
               <li>FLOAT - Decimal of any size</li>
               <li>TEXT - Large amounts of text, no limit in size</li>
               <li>DATE / TIME - date entries with specific formats</li>
+              <li>BOOLEAN - True/False [TinyInt]</li>
+              <li>BIGINT - Large integer </li>
             </ul>
+            <br /><br />
+            <p><small>NOTE: RBP uses BIGINT instead of DATETIME</small></p>
+            <p><small>INT: (-2147483648 to 2147483647, 4294967295)</small></p>
+            <p><small>BIGINT: (-9223372036854775808 to 9223372036854775807, 18446744073709551615)</small></p>
           </section>
           <section>
             <h3>Working with MySQL</h3>
@@ -387,7 +393,11 @@ echo 'Return to <a href="index.php">home</a>.'
             <ul>
               <li><a href="http://www.php.net/manual/en/" target="_blank">PHP Manual</a>, the official PHP documentation. Check the comments; they are useful.</li>
               <li><a href="http://www.codecademy.com/tracks/php" target="_blank">Code Academy</a>, with interactive PHP lessons to help you review.</li>
-              <li><a href="http://www.w3schools.com/sql/default.asp" target="_blank">W3Schools SQL Tutorial</a>, a great guide to basic SQL.
+              <li><a href="http://www.learn-php.org/" target="_blank">Another - http://www.learn-php.org/</li> 
+              <li><a href="https://www.w3schools.com/php/default.asp" target="_blank">And Another - https://www.w3schools.com/php/default.asp</li> 
+              <li><a href="http://www.w3schools.com/sql/default.asp" target="_blank"> a great guide to basic SQL. </li>                           
+              <li><a href="http://www.mysqltutorial.org/" target="_blank">Another - http://www.mysqltutorial.org/.</li>
+              <li><a href="https://www.codecademy.com/learn/learn-sql" target="_blank">And Another - https://www.codecademy.com/learn/learn-sql</li>              
             </ul>
           </section>
         </section>
